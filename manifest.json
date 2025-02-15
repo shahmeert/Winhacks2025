@@ -1,12 +1,12 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Focus Tracker",
   "version": "1.0",
   "permissions": [
     "tabs",
     "notifications"
   ],
-  
+
   "background": {
     "scripts": ["background.js"],
     "persistent": false
