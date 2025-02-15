@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (startTracker) {
         startTracker.addEventListener("change", (event) => {
             if (event.target.checked) {
-                alert("we are LIVE!");
                 document.body.style.transition = "background-color 1s";
                 document.body.style.backgroundColor = "#000000"; 
 
