@@ -30,6 +30,11 @@ function checkForbiddenTabs() {
         });
     });
 }
+chrome.runtime.onMessage.addListener((request, sender) => {
+    if (request.action === "closeTab" && sender.tab) {
+        chrome.tabs.remove(sender.tab.id);
+    }
+});
 
 chrome.tabs.onCreated.addListener((tab) => {
     checkForbiddenTabs(tab);
