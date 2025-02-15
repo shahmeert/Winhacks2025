@@ -84,8 +84,9 @@ input:checked + .slider:before {
     text-align: center;
 }
 #chud {
-    display: block; 
-    margin: 10px auto; 
-    max-width: 80px; 
+    position: absolute;
+    left: 85%;
+    top: 70%; 
+    max-width: 40px; 
     height: auto; 
 }
