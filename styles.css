@@ -4,10 +4,17 @@ body {
     padding: 10px; 
     width: 300px; 
     height: 200px; 
+<<<<<<< HEAD
     box-sizing: border-box; 
   }
   
   .container {
+=======
+    box-sizing: border-box;
+}
+
+.container {
+>>>>>>> 36f4d70f08e6ca673434513139e3984c560bb4bb
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,4 +69,33 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+<<<<<<< HEAD
   
+=======
+
+#centeredText {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#cen2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#chud {
+    position: absolute;
+    width: 10;
+    height: 10;
+    top: 50%;
+    left: 50%;
+
+
+}
+>>>>>>> 36f4d70f08e6ca673434513139e3984c560bb4bb
