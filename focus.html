@@ -25,10 +25,9 @@
         <img src="nuhuh.gif" alt="Focus Mode" />
     </body>
     <script>
-        const newWindow = window.open('', '_blank');
         newWindow.document.write(document.documentElement.outerHTML);
         setTimeout(() => {
-            chrome.runtime.sendMessage({action : "closeTab"});
+            chrome.runtime.sendMessage({action: "closeTab"});
         }, 3000);
     </script>
 </html>
