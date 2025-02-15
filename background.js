@@ -4,11 +4,13 @@ const forbiddenUrls = [
     "https://www.instagram.*/*", "https://www.snapchat.*/*", "https://x.*/*", "https://www.tiktok.*/*",
     "https://www.pinterest.*/*", "https://www.reddit.*/*", "https://www.whatsapp.*/*", "https://www.messenger.*/*",
     "https://web.whatsapp.*/*", "https://www.discord.*/*", "https://www.skype.*/*", "https://www.steampowered.*/*",
-    "https://www.epicgames.*/*", "https://www.roblox.*/*",  "https://www.reddit.*/*",
-    "https://www.nytimes.*/*"
+    "https://www.epicgames.*/*", "https://www.roblox.*/*", "https://www.nytimes.*/*"
 ];
 
 function checkForbiddenTabs() {
+    if (!startTracker || !startTracker.checked) {
+        return; 
+    }
     chrome.tabs.query({}, (tabs) => { 
         tabs.forEach((tab) => {
             forbiddenUrls.some((urlPattern) => {
@@ -44,4 +46,4 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>{
     if(changeInfo.status == "complete"){
         checkForbiddenTabs(tab);
     }
-})
+});
