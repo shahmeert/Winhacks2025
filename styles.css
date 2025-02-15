@@ -52,7 +52,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translate(26px, -50%); 
+    transform: translate(26px, -50%); /* Move the circle correctly */
 }
 
 .slider.round {
@@ -62,19 +62,4 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-
-#centeredText {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-#cen2 {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
+  
