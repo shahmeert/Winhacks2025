@@ -42,9 +42,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
 chrome.tabs.onCreated.addListener(() => {
     checkForbiddenTabs(); 
 });
-chrome.tabs.onCreated.addListener((tab) => {
-    checkForbiddenTabs(tab);
-});
+
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>{
     if(changeInfo.status == "complete"){
