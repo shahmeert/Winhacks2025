@@ -11,10 +11,10 @@ const forbiddenUrls = [
 function checkForbiddenTabs() {
     chrome.tabs.query({}, (tabs) => { 
         tabs.forEach((tab) => {
-            forbiddenUrls.forEach((urlPattern) => {
+            forbiddenUrls.some((urlPattern) => {
                 const regex = new RegExp(urlPattern);
-
                 if (regex.test(tab.url)) {
+                    if(!tab.url.includes("focus.html")){
                     chrome.notifications.create({
                         type: "basic",
                         iconUrl: "icon.png", 
@@ -23,10 +23,9 @@ function checkForbiddenTabs() {
                     });
 
                     chrome.tabs.update(tab.id, { url: "focus.html" }, () => {
-                        chrome.tabs.create({url: "focus.html"});
                     });
-                    return;
                 }
+            }
             });
         });
     });
