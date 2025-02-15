@@ -8,9 +8,7 @@ const forbiddenUrls = [
 ];
 
 function checkForbiddenTabs() {
-    if (!startTracker) {
-        return; 
-    }
+    
     chrome.tabs.query({}, (tabs) => { 
         tabs.forEach((tab) => {
             forbiddenUrls.some((urlPattern) => {
