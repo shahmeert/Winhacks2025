@@ -4,37 +4,35 @@ const forbiddenUrls = [
     "https://www.instagram.*/*", "https://www.snapchat.*/*", "https://x.*/*", "https://www.tiktok.*/*",
     "https://www.pinterest.*/*", "https://www.reddit.*/*", "https://www.whatsapp.*/*", "https://www.messenger.*/*",
     "https://web.whatsapp.*/*", "https://www.discord.*/*", "https://www.skype.*/*", "https://www.steampowered.*/*",
-    "https://www.epicgames.*/*", "https://www.roblox.*/*",  "https://www.reddit.*/*",
-    "https://www.nytimes.*/*"
+    "https://www.epicgames.*/*", "https://www.roblox.*/*", "https://www.reddit.*/*", "https://www.nytimes.*/*"
 ];
 
 function checkForbiddenTabs() {
-    chrome.tabs.query({}, (tabs) => { 
-        tabs.forEach((tab) => {
-            forbiddenUrls.some((urlPattern) => {
-                const regex = new RegExp(urlPattern);
-                if (regex.test(tab.url)) {
-                    if(!tab.url.includes("focus.html")){
-                    chrome.notifications.create({
-                        type: "basic",
-                        iconUrl: "icon.png", 
-                        title: "Focus Mode Activated!",
-                        message: "This tab is a distraction. It has been redirected.",
-                    });
+    chrome.storage.sync.get(["blockingEnabled"], (result) => {
+        if (!result.blockingEnabled) return; 
 
-                    chrome.tabs.update(tab.id, { url: "focus.html" }, () => {
-                    });
-                }
-            }
+        chrome.tabs.query({}, (tabs) => { 
+            tabs.forEach((tab) => {
+                forbiddenUrls.some((urlPattern) => {
+                    const regex = new RegExp(urlPattern);
+                    if (regex.test(tab.url)) {
+                        if (!tab.url.includes("focus.html")) {
+                            chrome.notifications.create({
+                                type: "basic",
+                                iconUrl: "icon.png", 
+                                title: "Focus Mode Activated!",
+                                message: "This tab is a distraction. Redirecting...",
+                            });
+
+                            chrome.tabs.update(tab.id, { url: "focus.html" }); 
+                        }
+                    }
+                });
             });
         });
     });
 }
 
-
-chrome.tabs.onCreated.addListener((tab) => {
-    checkForbiddenTabs(tab);
-});
 
 chrome.runtime.onMessage.addListener((request, sender) => {
     if (request.action === "closeTab" && sender.tab) {
@@ -42,3 +40,10 @@ chrome.runtime.onMessage.addListener((request, sender) => {
     }
 });
 
+chrome.tabs.onCreated.addListener(checkForbiddenTabs);
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status === "complete") {
+        checkForbiddenTabs();
+    }
+});
