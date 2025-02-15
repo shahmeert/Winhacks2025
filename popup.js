@@ -5,4 +5,3 @@ document.getElementById("myButton").addEventListener("click", () => {
     });
 document.body.style.width = "300px";
 document.body.style.height = "300px";
-
