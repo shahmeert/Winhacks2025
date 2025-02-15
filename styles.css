@@ -1,8 +1,25 @@
-.switch {
+/* Set the size of the popup */
+body {
+    margin: 0;
+    padding: 10px; /* Add some padding for better spacing */
+    width: 300px; /* Set the width of the popup */
+    height: 200px; /* Set the height of the popup */
+    box-sizing: border-box; /* Ensure padding is included in the width/height */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make the container fill the popup height */
+  }
+  
+  /* Increase the size of the switch */
+  .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 80px; /* Increased width */
+    height: 45px; /* Increased height */
   }
   
   .switch input {
@@ -26,8 +43,8 @@
   .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 36px; /* Increased height */
+    width: 36px; /* Increased width */
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -44,13 +61,13 @@
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(36px); /* Adjusted for new size */
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
   }
   
   .slider.round {
-    border-radius: 34px;
+    border-radius: 45px; /* Adjusted for new height */
   }
   
   .slider.round:before {
