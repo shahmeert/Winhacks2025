@@ -5,9 +5,9 @@ body {
     width: 300px; 
     height: 200px; 
     box-sizing: border-box; 
-  }
-  
-  .container {
+}
+
+.container {
     box-sizing: border-box;
 }
 
@@ -16,9 +16,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%; 
-  }
-  
-  .switch {
+}
+
+.switch {
     position: absolute;
     top: 8%;
     right: 8%;
