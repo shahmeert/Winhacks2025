@@ -28,7 +28,7 @@
         const newWindow = window.open('', '_blank');
         newWindow.document.write(document.documentElement.outerHTML);
         setTimeout(() => {
-            window.close();
-        }, 5000);
+            chrome.runtime.sendMessage({action : "closeTab"});
+        }, 3000);
     </script>
 </html>
