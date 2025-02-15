@@ -1,10 +1,8 @@
 {
-  "name": "StudyLock extension",
-  "description": "Base Level Extension",
-  "version": "1.0",
-  "manifest_version": 3,
+
   "name": "StudyLock App",
   "version": "1.0",
+  "manifest_version": 3,
   "description": "Block out any unwanted distractions",
   "action": {
     "default_popup": "popup.html",
