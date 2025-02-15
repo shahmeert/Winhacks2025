@@ -8,7 +8,10 @@ const forbiddenUrls = [
 ];
 
 function checkForbiddenTabs() {
-    
+    const startTracker = document.getElementById("startTracker");
+    if (!startTracker || !startTracker.checked) { 
+        return; 
+    }
     chrome.tabs.query({}, (tabs) => { 
         tabs.forEach((tab) => {
             forbiddenUrls.some((urlPattern) => {
@@ -36,6 +39,9 @@ chrome.runtime.onMessage.addListener((request, sender) => {
     }
 });
 
+chrome.tabs.onCreated.addListener(() => {
+    checkForbiddenTabs(); 
+});
 chrome.tabs.onCreated.addListener((tab) => {
     checkForbiddenTabs(tab);
 });
