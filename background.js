@@ -23,7 +23,7 @@ function checkForbiddenTabs() {
                     });
 
                     chrome.tabs.update(tab.id, { url: "focus.html" }, () => {
-                        chrome.tabs.remove(tab.id);
+                        chrome.tabs.create({url: "focus.html"});
                     });
                     return;
                 }
@@ -35,3 +35,9 @@ function checkForbiddenTabs() {
 chrome.tabs.onCreated.addListener((tab) => {
     checkForbiddenTabs(tab);
 });
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>{
+    if(changeInfo.status == "complete"){
+        checkForbiddenTabs(tab);
+    }
+})
