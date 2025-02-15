@@ -79,3 +79,9 @@ input:checked + .slider:before {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
+#chud {
+    position: absolute;
+    top: 50px;  
+    left: 100px; 
+}
