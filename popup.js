@@ -1,4 +1,4 @@
-document.getElementById("startTracker").addEventListener("click", () => {
+document.getElementById("startTracker").addEventListener("DOMContentLoaded", () => {
     alert("we are LIVE!");
     document.body.style.transition = "background-color 1s";
     document.body.style.backgroundColor = "#add8e6";
