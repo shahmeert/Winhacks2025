@@ -6,10 +6,9 @@
     "tabs",
     "notifications"
   ],
-
+  
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
 
   "description": "Block out any unwanted distractions",
