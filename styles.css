@@ -4,18 +4,17 @@ body {
     padding: 10px; 
     width: 300px; 
     height: 200px; 
-    box-sizing: border-box;
-    background-color: darkcyan;
-}
-
-.container {
+    box-sizing: border-box; 
+  }
+  
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%; 
-}
-
-.switch {
+  }
+  
+  .switch {
     position: absolute;
     top: 8%;
     right: 8%;
@@ -49,7 +48,7 @@ body {
 
 input:checked + .slider {
     background-color: #2196F3;
-    border-color: #0d8bf2; 
+    border-color: #0d8bf2; /* Change outline when active */
 }
 
 input:checked + .slider:before {
@@ -63,27 +62,4 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-
-#centeredText {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-#cen2 {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-#chud {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-
-}
+  
