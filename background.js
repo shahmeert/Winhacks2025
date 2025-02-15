@@ -4,7 +4,7 @@ const forbiddenUrls = [
     "https://www.instagram.*/*", "https://www.snapchat.*/*", "https://www.twitter.*/*", "https://www.tiktok.*/*",
     "https://www.pinterest.*/*", "https://www.reddit.*/*", "https://www.whatsapp.*/*", "https://www.messenger.*/*",
     "https://web.whatsapp.*/*", "https://www.discord.*/*", "https://www.skype.*/*", "https://www.steampowered.*/*",
-    "https://www.epicgames.*/*", "https://www.roblox.*/*", "https://www.wikipedia.*/*", "https://www.reddit.*/*",
+    "https://www.epicgames.*/*", "https://www.roblox.*/*",  "https://www.reddit.*/*",
     "https://www.nytimes.*/*"
 ];
 
