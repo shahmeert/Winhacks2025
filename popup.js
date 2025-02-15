@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("we are LIVE!");
                 document.body.style.transition = "background-color 1s";
                 document.body.style.backgroundColor = "#000000"; 
+                text.style.color = "red";
 
                 document.body.style.width = "300px";
                 document.body.style.height = "300px";
