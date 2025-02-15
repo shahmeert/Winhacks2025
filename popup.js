@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 alert("Tracking stopped!");
                 document.body.style.backgroundColor = "";
-                document.body.style.width = "300";
-                document.body.style.height = "300";
+                document.body.style.width = "300px";
+                document.body.style.height = "300px";
             }
         });
     }
