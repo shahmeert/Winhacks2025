@@ -81,6 +81,8 @@ input:checked + .slider:before {
 
 #chud {
     position: absolute;
+    width: 10;
+    height: 10;
     top: 50%;
     left: 50%;
 
