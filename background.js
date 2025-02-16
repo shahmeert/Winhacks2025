@@ -8,6 +8,7 @@ const forbiddenUrls = [
     "https://www.nytimes.*/*"
 ];
 
+
 function checkForbiddenTabs() {
     chrome.tabs.query({}, (tabs) => { 
         tabs.forEach((tab) => {
