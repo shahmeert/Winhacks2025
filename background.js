@@ -8,7 +8,8 @@ const forbiddenUrls = [
 ];
 
 function checkForbiddenTabs() {
-    
+    chrome.storage.local.get(["trackerEnabled"], (result) => { 
+    if (!result.trackerEnabled) return;
     chrome.tabs.query({}, (tabs) => { 
         tabs.forEach((tab) => {
             forbiddenUrls.some((urlPattern) => {
@@ -27,6 +28,7 @@ function checkForbiddenTabs() {
                 }
             }
             });
+        });
         });
     });
 }
