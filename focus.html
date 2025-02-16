@@ -27,6 +27,16 @@
             <source src="sobertodeath.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+        <script>
+            document.addEventListener("visibilitychange", function() {
+            let audio = document.getElementById("bg-audio");
+            if (document.hidden) {
+                audio.pause();  
+            } else {
+                audio.play();  
+            }
+            });
+        </script>
 
     </body>
 </html>
