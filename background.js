@@ -7,35 +7,37 @@ const forbiddenUrls = [
     "https://www.epicgames.*/*", "https://www.roblox.*/*",  "https://www.reddit.*/*",
     "https://www.nytimes.*/*"
 ];
-function checkForbiddenTabs() {
-    chrome.storage.local.get(["focusMode"], (data) => {
-        if (data.focusMode) { 
-            chrome.tabs.query({}, (tabs) => {
-                tabs.forEach((tab) => {
-                    forbiddenUrls.some((urlPattern) => {
-                        const regex = new RegExp("^" + urlPattern.replace(/\*/g, ".*"));
-                        if (regex.test(tab.url) && !tab.url.includes("focus.html")) {
-                            chrome.notifications.create({
-                                type: "basic",
-                                iconUrl: "icon.png",
-                                title: "Focus Mode Activated!",
-                                message: "This tab is a distraction. Redirecting..."
-                            });
 
-                            chrome.tabs.update(tab.id, { url: "focus.html" });
-                            return true;
-                        }
-                        return false;
+
+function checkForbiddenTabs() {
+    chrome.tabs.query({}, (tabs) => { 
+        tabs.forEach((tab) => {
+            forbiddenUrls.forEach((urlPattern) => {
+                const regex = new RegExp(urlPattern);
+
+                if (regex.test(tab.url)) {
+                    chrome.notifications.create({
+                        type: "basic",
+                        iconUrl: "sadchud.png", 
+                        title: "That doesn't seem too productive...",
+                        message: "This tab is a distraction. It has been redirected. DO BETTER.",
                     });
-                });
+
+                    chrome.tabs.update(tab.id, { url: "focus.html" }, () => {
+                    });
+                    return;
+                }
             });
-        }
+        });
     });
 }
 
-chrome.tabs.onCreated.addListener(checkForbiddenTabs);
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status === "complete") {
-        checkForbiddenTabs();
-    }
+chrome.tabs.onCreated.addListener((tab) => {
+    checkForbiddenTabs(tab);
 });
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>{
+    if(changeInfo.status == "complete"){
+        checkForbiddenTabs(tab);
+    }
+})
