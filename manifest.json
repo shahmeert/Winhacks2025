@@ -1,19 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Focus Tracker",
+  "name": "Focus Mode",
   "version": "1.0",
-  "permissions": [
-    "tabs",
-    "notifications"
-  ],
-  
+  "permissions": ["storage", "tabs", "notifications"],
   "background": {
-    "service_worker": "background.js"
+      "service_worker": "background.js"
   },
-
-  "description": "Block out any unwanted distractions",
   "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
+      "default_popup": "popup.html",
+      "default_icon": {
+          "16": "icon.png",
+          "48": "icon.png",
+          "128": "icon.png"
+      }
   }
 }
