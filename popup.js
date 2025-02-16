@@ -1,15 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const startTracker = document.getElementById("startTracker");
-
-    chrome.storage.local.get(["trackerEnabled"], (result) => {
-        if (result.trackerEnabled) {
-            startTracker.checked = true; 
-            document.body.style.backgroundColor = "#000000"; 
-        } else {
-            startTracker.checked = false;
-            document.body.style.backgroundColor = "";
-        }
-    });
+    
     if (startTracker) {
         startTracker.addEventListener("change", (event) => {
             if (event.target.checked) { 
