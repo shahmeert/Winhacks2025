@@ -17,7 +17,7 @@ function checkForbiddenTabs() {
                 if (regex.test(tab.url)) {
                     chrome.notifications.create({
                         type: "basic",
-                        iconUrl: "icon.png", 
+                        iconUrl: "chud.png", 
                         title: "That doesn't seem too productive. Naughty Naughty.",
                         message: "This tab is a distraction. It has been redirected.",
                     });

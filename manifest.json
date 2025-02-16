@@ -9,8 +9,8 @@
   "action": {
       "default_popup": "popup.html",
       "default_icon": {
-          "16": "chud.png",
-          "48": "chud.png",
+          "16": "nuhuhpicture.png",
+          "48": "nuhuhpicture.png",
           "128": "nuhuhpicture.png"
       }
   }
