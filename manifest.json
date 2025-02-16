@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Focus Mode",
   "version": "1.0",
-  "permissions": ["storage", "tabs", "notifications"],
+  "permissions": ["storage", "tabs", "notifications", "scripting:"],
   "background": {
       "service_worker": "background.js"
   },
