@@ -18,7 +18,7 @@ function checkForbiddenTabs() {
                     chrome.notifications.create({
                         type: "basic",
                         iconUrl: "sadchud.png", 
-                        title: "That doesn't seem too productive. Naughty Naughty.",
+                        title: "That doesn't seem too productive...",
                         message: "This tab is a distraction. It has been redirected. DO BETTER.",
                     });
 
