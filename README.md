@@ -10,6 +10,7 @@ Turn on Developer Mode in the top right corner.
 Select 'Load unpack'.
 Search for directory of repo. 
 
+Click on the puzzle piece icon for extentions and turn our extention on.
 BAM!! You are ready to stay productive and studying!
 
 How it works:
