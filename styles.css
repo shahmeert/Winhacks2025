@@ -52,11 +52,11 @@ body {
 
 input:checked + .slider {
     background-color: #2196F3;
-    border-color: #0d8bf2; /* Change outline when active */
+    border-color: #0d8bf2; 
 }
 
 input:checked + .slider:before {
-    transform: translate(26px, -50%); /* Move the circle correctly */
+    transform: translate(26px, -50%); 
 }
 
 .slider.round {
