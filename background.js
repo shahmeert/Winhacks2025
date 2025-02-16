@@ -18,12 +18,11 @@ function checkForbiddenTabs() {
                     chrome.notifications.create({
                         type: "basic",
                         iconUrl: "icon.png", 
-                        title: "Focus Mode Activated!",
+                        title: "That doesn't seem too productive. Naughty Naughty.",
                         message: "This tab is a distraction. It has been redirected.",
                     });
 
                     chrome.tabs.update(tab.id, { url: "focus.html" }, () => {
-                        chrome.tabs.create({url: "focus.html"});
                     });
                     return;
                 }
