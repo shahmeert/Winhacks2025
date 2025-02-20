@@ -3,7 +3,7 @@ const forbiddenUrls = [
     "https://www.disneyplus.*/*", "https://www.crunchyroll.*/*", "https://www.twitch.*/*", "https://www.facebook.*/*",
     "https://www.instagram.*/*", "https://www.snapchat.*/*", "https://x.*/*", "https://www.tiktok.*/*",
     "https://www.pinterest.*/*", "https://www.reddit.*/*", "https://www.whatsapp.*/*", "https://www.messenger.*/*",
-    "https://web.whatsapp.*/*", "https://www.discord.*/*", "https://www.skype.*/*", "https://steampowered.*/*",
+    "https://web.whatsapp.*/*", "https://www.discord.*/*", "https://www.skype.*/*", "https://.*steampowered.*/*",
     "https://www.epicgames.*/*", "https://www.roblox.*/*",  "https://www.reddit.*/*",
     "https://www.nytimes.*/*"
 ];
